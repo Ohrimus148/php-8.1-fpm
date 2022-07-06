@@ -8,3 +8,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+RUN groupadd -g 1001 www &&  useradd -u 1001 -ms /bin/bash -g www www
+USER www
