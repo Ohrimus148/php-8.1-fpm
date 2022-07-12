@@ -2,9 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace App;
+namespace Socket\Chat\Config;
 
 use App\Exceptions\RouteNotFoundException;
+use App\Routes\Router;
 
 class App
 {
