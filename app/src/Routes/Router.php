@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Socket\Chat\Config;
+namespace Socket\Chat\Routes;
+
 use App\Exceptions\RouteNotFoundException;
 use Socket\Chat\Container;
 

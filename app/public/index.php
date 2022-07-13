@@ -3,7 +3,7 @@
 
 use Socket\Chat\Config\App;
 use Socket\Chat\Config\Config;
-use Socket\Chat\Config\Router;
+use Socket\Chat\Routes\Router;
 use Socket\Chat\Container;
 //use Symfony\Component\Dotenv\Dotenv;
 

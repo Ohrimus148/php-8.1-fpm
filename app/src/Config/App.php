@@ -4,8 +4,10 @@ declare(strict_types = 1);
 
 namespace Socket\Chat\Config;
 
-use App\Exceptions\RouteNotFoundException;
-use App\Routes\Router;
+use Socket\Chat\Database\DB;
+use Socket\Chat\Exceptions\RouteNotFoundException;
+use Socket\Chat\Routes\Router;
+
 
 class App
 {

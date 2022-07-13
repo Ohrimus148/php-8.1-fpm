@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace App\Exceptions\Container;
+namespace Socket\Chat\Exceptions\Container;
 
 use Psr\Container\ContainerExceptionInterface;
 
