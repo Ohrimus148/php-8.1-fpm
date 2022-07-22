@@ -15,6 +15,9 @@
     "require": {
         "psr/container": "^2.0",
         "symfony/dotenv": "^6.1",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "doctrine/orm": "^2.12",
+        "react/http": "^1.6",
+        "react/socket": "^1.11"
     }
 }

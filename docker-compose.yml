@@ -20,17 +20,31 @@ services:
             - "./app:/app"
             - "./docker/php-fpm/php-overrides.ini:/usr/local/etc/php/conf.d/php-overrides.ini"
 
-    mariadb:
-        image: "mariadb:10.9.1-rc"
+#    mariadb:
+#        image: "mariadb:10.9.1-rc"
+#        restart: always
+#        volumes:
+#            - "./mariadb/data:/var/lib/mysql"
+#            - "./mariadb/logs:/var/log/mysql"
+#            - "./mariadb/conf:/etc/mysql"
+#        environment:
+#            MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+#            MARIADB_DATABASE: "${MARIADB_DATABASE}"
+#            MARIADB_USER: "${MARIADB_USER}"
+#            MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+#        ports:
+#            - "3307:3306"
+
+    db:
+        image: postgres:14.1-alpine
         restart: always
-        volumes:
-            - "./mariadb/data:/var/lib/mysql"
-            - "./mariadb/logs:/var/log/mysql"
-            - "./mariadb/conf:/etc/mysql"
         environment:
-            MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
-            MARIADB_DATABASE: "${MARIADB_DATABASE}"
-            MARIADB_USER: "${MARIADB_USER}"
-            MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
         ports:
-            - "3307:3306"
+            - '5432:5432'
+        volumes:
+            - db:/var/lib/postgresql/data
+volumes:
+    db:
+        driver: local

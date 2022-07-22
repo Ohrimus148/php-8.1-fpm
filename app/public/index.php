@@ -20,7 +20,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $container = new Container();
 $router    = new Router($container);
 
-$router->get('/', ['HomeController', 'index']);
+$router->run();
 
 (new App(
     $router,
